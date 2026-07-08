@@ -2,15 +2,12 @@
 The LPLSP model is empirically derived but grounded in the theory of heat transfer. The formulation is developed in steps: it is first presented for a single insulated body, then extended to conduction between two bodies, then extended to convection between one body and fluid, and finally generalized to include mixed modes of heat transfer, including convection under both constant and variable flow velocities.
 
 ## Formulation
-
-# Test
-
-Inline:
-
-$K=\frac{1}{RC}$
-
-Display:
-
-$$
-K=\frac{1}{RC}
-$$
+The transient form of heat equation considering constant properties at atmospheric pressures can be expressed as,
+```math
+    \frac{\partial T}{\partial t} = \alpha \nabla^2 T + \frac{P}{\rho c_p},
+```
+where, $P$ is the heat source, $\rho, c_p ,k$ represent the density, specific heat capacity and thermal conductivity of the material, respectively, $T$ the temperature, $x_i,t$ the spatial and temporal terms, $\alpha= k/\rho c_p$ is the thermal diffusivity and $\nabla^2$ the Laplace operator. The transient temperature response can be expressed by integrating this equation with respect to time,
+```math
+    T(t)=D(t) + \frac{P}{\rho c_p} t + c_{int}.
+```
+where, $D(t)=\alpha \int \nabla^2 T dt$ represents the time integrated diffusion term and $c_{int}$ the integration constant which can be determined from the initial condition. This equation forms the basis of the proposed model.
