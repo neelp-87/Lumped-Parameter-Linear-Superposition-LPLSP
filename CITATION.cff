@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+
+title: Lumped Parameter Linear Superposition (LPLSP)
+
+message: >
+  If you use this software, please cite the following publications describing the LPLSP methodology and ensemble parameter estimation framework.
+
+type: software
+
+authors:
+  - family-names: Padmanabhan
+    given-names: Neelakantan
+
+repository-code: "https://github.com/neelp-87/Lumped-Parameter-Linear-Superposition-LPLSP"
+
+license: MIT
+
+preferred-citation:
+
+  - type: article
+    title: A Transient Thermal Model for Power Electronics Systems
+    authors:
+    - family-names: Padmanabhan
+      given-names: Neelakantan
+    year: 2024
+    doi: 10.1109/SoutheastCon52093.2024.10500091
+  
+ - type: article
+    title: A Scalable Approach for Transient Thermal Modeling of Automotive Power Electronics
+    authors:
+      - family-names: Padmanabhan
+        given-names: Neelakantan
+    year: 2025
+    doi: 10.4271/2025-01-5073
+
+  - type: article
+    title: Rapid Modeling of Transient Thermal Systems through Ensemble Parameter Estimation Applied to the Lumped Parameter Linear Superposition Method
+    authors:
+      - family-names: Padmanabhan
+        given-names: Neelakantan
+    year: 2026
+    doi: 10.4271/2026-01-5034
