@@ -1,42 +1,45 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
 cff-version: 1.2.0
-
 title: Lumped Parameter Linear Superposition (LPLSP)
-
-message: >
-  If you use this software, please cite the following publications describing the LPLSP methodology and ensemble parameter estimation framework.
-
+message: ' If you use this software, please cite the following publications describing the LPLSP methodology and ensemble parameter estimation framework.'
 type: software
-
 authors:
-  - family-names: Padmanabhan
-    given-names: Neelakantan
-
-repository-code: "https://github.com/neelp-87/Lumped-Parameter-Linear-Superposition-LPLSP"
-
+  - given-names: Neelakantan
+    family-names: Padmanabhan
+    email: neel.p.3187@gmail.com
+    name-particle: Neelakantan
+    affiliation: ZF Group
+    orcid: 'https://orcid.org/0000-0002-9517-6337'
+identifiers:
+  - type: url
+    value: 'https://ieeexplore.ieee.org/document/10500091'
+    description: >-
+      IEEE paper describing the theory, formulation and case
+      studies
+  - type: doi
+    value: 10.4271/2025-01-5073
+    description: >-
+      SAE Paper describing the extended formulation,
+      additional case studies and sensitivity studies.
+  - type: doi
+    value: 10.4271/2026-01-5034
+    description: >-
+      SAE paper describing algorithms for ensemble parameter
+      estimation.
+repository-code: >-
+  https://github.com/neelp-87/Lumped-Parameter-Linear-Superposition-LPLSP
+abstract: >-
+  The Lumped Parameter Linear Superposition (LPLSP) method is a computationally efficient modeling approach for transient thermal systems. It is a hybrid approach that combines lumped parameter modeling with the principle of linear superposition to capture transient thermal behavior of systems efficiently. Additionally an ensemble parameter estimation framework that enables reduced order thermal model generation from a single transient dataset is also presented. Unlike the earlier implementation that relied on multiple parametric simulations to excite each heat source independently, the proposed approach simultaneously identifies all model coefficients using fully transient excitations. The proposed strategies yield models with temperature-prediction errors within $5\%$ of CFD simulations while reducing model-development times from $O(10^3 s)$ to $O(10^0 s)$--$O(10^1 s)$. Once constructed, the model evaluates new transient operating conditions in $O(10^0 s)$, enabling rapid thermal analysis and enabling automated generation of reduced order models for both simulated and physical systems. This method enables rapid thermal performance evaluation of power electronics systems that have very fast transients in component level power dissipation and variations in ambient conditions,
+  making it particularly well-suited for early-stage design iterations and long-duration mission profile simulations. The approach offers a practical path to reducing development cycles for automotive power electronics.
+  design. 
+keywords:
+  - Lumped Parameter Linear Superposition
+  - LPLSP
+  - Lumped Parameter Model
+  - Power Electronics Thermal Modeling
+  - Non-linear modeling
+  - Ensemble Parameter Estimation
+  - Reduced Order Model (ROM)
 license: MIT
-
-preferred-citation:
-
-  - type: article
-    title: A Transient Thermal Model for Power Electronics Systems
-    authors:
-    - family-names: Padmanabhan
-      given-names: Neelakantan
-    year: 2024
-    doi: 10.1109/SoutheastCon52093.2024.10500091
-  
- - type: article
-    title: A Scalable Approach for Transient Thermal Modeling of Automotive Power Electronics
-    authors:
-      - family-names: Padmanabhan
-        given-names: Neelakantan
-    year: 2025
-    doi: 10.4271/2025-01-5073
-
-  - type: article
-    title: Rapid Modeling of Transient Thermal Systems through Ensemble Parameter Estimation Applied to the Lumped Parameter Linear Superposition Method
-    authors:
-      - family-names: Padmanabhan
-        given-names: Neelakantan
-    year: 2026
-    doi: 10.4271/2026-01-5034
