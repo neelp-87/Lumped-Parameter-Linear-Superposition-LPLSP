@@ -3,12 +3,14 @@ The LPLSP model is empirically derived but grounded in the theory of heat transf
 
 ## Formulation
 
-The transient form of heat equation considering constant properties at atmospheric pressures can be expressed as,
+# Test
+
+Inline:
+
+$K=\frac{1}{RC}$
+
+Display:
+
 $$
-    \frac{\partial T}{\partial t} = \alpha \nabla^2 T + \frac{P}{\rho c_p},
+K=\frac{1}{RC}
 $$
-where, $P$ is the heat source, $\rho, c_p ,k$ represent the density, specific heat capacity and thermal conductivity of the material, respectively, $T$ the temperature, $x_i,t$ the spatial and temporal terms, $\alpha= k/\rho c_p$ is the thermal diffusivity and $\nabla^2$ the Laplace operator. The transient temperature response can be expressed by integrating Eq. \eqref{eqmain1} with respect to time,
-$$
-    T(t)=D(t) + \frac{P}{\rho c_p} t + c_{int}.
-$$
-where, $D(t)=\alpha \int \nabla^2 T dt$ represents the time integrated diffusion term and $c_{int}$ the integration constant which can be determined from the initial condition. This equation forms the basis of the proposed model. The model derivation involved fitting a specific form of this equation to the temperature data obtained from CFD simulations. The resulting model constants were optimized and then analyzed to relate them back to the physical parameters of the system.
