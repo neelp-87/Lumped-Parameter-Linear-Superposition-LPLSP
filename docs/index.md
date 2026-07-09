@@ -38,23 +38,19 @@ $$
 
 ## Codes
 ### Sequential Parameter Estimation and Modeling
-Traditional LPLSP implementation requiring sequential excitation of individual heat sources.
-
-**Location:** code/sequential_parameter_estimation
-
+Traditional LPLSP implementation requiring sequential excitation of individual heat sources.\
+[LPLSP_Base_Code](/code/sequential_parameter_estimation)
 
 ### Ensemble Parameter Estimation and Modeling
-LPLSP model parameters estimated using a short single transient simulation data, reducing the overall computation time for ROM development and temperature estimation using ROM.
-
-**Location:** code/ensemble_parameter_estimation
+LPLSP model parameters estimated using a short single transient simulation data, reducing the overall computation time for ROM development and temperature estimation using ROM.\
+[Ensemble_Parameter_Estimation_Code](/code/ensemble_parameter_estimation)
 
 ## Publications
-Author-accepted manuscripts of the papers that present the model's background, theory, formulation, algorithms, case studies as well as a sensitivity analysis of the physical parameters in the model. 
-
+Author-accepted manuscripts of the papers that present the model's background, theory, formulation, algorithms, case studies as well as a sensitivity analysis of the physical parameters in the model. \
 [Manuscripts](/publications/papers_and_preprints)
 
 ## References
-If you use this repository in academic research, please cite the following publications:
+If you use this repository in academic research, please cite the following publications:\
 ### [1] Background Methodology
 N. Padmanabhan, "A Transient Thermal Model for Power Electronics Systems," SoutheastCon 2024, Atlanta, GA, USA, 2024, pp. 1294-1299, doi: 10.1109/SoutheastCon52093.2024.10500091.
 
