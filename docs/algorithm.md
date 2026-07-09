@@ -46,9 +46,9 @@ $R = AB^{T}$ and $K = CD^{T}$, where $A \in \mathbb{R}^{M \times r}$ and $B \in 
 		\sigma_1 \ge \sigma_2 \ge \cdots \ge \sigma_{r^\star} .
 	\end{split}
 ```
-
+A pseudocode for this can be found in the following work [^SAE2]. The code for Naive implementation of ensemble parameter estimation for LPLSP model is located in the **Location:** code/ensemble_parameter_estimation
 
 # References
-[^SAE1] Padmanabhan, N., "A Scalable Approach for Transient Thermal Modeling of Automotive Power Electronics," SAE Technical Paper Series, January 1, 2025, https://doi.org/10.4271/2025-01-5073.
-[^SAE2] Padmanabhan, N., "Rapid Modeling of Transient Thermal Systems through Ensemble Parameter Estimation Applied to the Lumped Parameter Linear Superposition Method," SAE Technical Paper Series, January 1, 2026, https://doi.org/10.4271/2026-01-5034.
-[^POD] Padmanabhan N., "Reduced order model of a convection-diffusion equation using Proper Orthogonal Decomposition," arXiv preprint arXiv:2303.07176. March 13, 2023. https://doi.org/10.48550/arXiv.2303.07176
+[^SAE1]: Padmanabhan, N., "A Scalable Approach for Transient Thermal Modeling of Automotive Power Electronics," SAE Technical Paper Series, January 1, 2025, https://doi.org/10.4271/2025-01-5073.
+[^SAE2]: Padmanabhan, N., "Rapid Modeling of Transient Thermal Systems through Ensemble Parameter Estimation Applied to the Lumped Parameter Linear Superposition Method," SAE Technical Paper Series, January 1, 2026, https://doi.org/10.4271/2026-01-5034.
+[^POD]: Padmanabhan N., "Reduced order model of a convection-diffusion equation using Proper Orthogonal Decomposition," arXiv preprint arXiv:2303.07176. March 13, 2023. https://doi.org/10.48550/arXiv.2303.07176
