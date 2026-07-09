@@ -37,24 +37,24 @@ $$
 ### Theory
 Background, formulation and development of the model.
 
-[Theory](/docs/theory.md)
+[Theory](docs/theory.md)
 
 ### Algorithm
 Algorithm of the model. This includes 1. Algorithm for sequential parameter estimation, 2. Algorithm for ensemble parameter estimation (single shot estimation) from transient data.
 
-[Algorithm](/docs/algorithm.md)
+[Algorithm](docs/algorithm.md)
 
 ### Codes
 #### Sequential Parameter Estimation and Modeling
 Traditional LPLSP implementation requiring sequential excitation of individual heat sources.
 
-[Base_Code](/code/sequential_parameter_estimation)
+[Base_Code](code/sequential_parameter_estimation)
 
 
 #### Ensemble Parameter Estimation and Modeling
 LPLSP model parameters estimated using a short single transient simulation data, reducing the overall computation time for ROM development and temperature estimation using ROM.
 
-[Fast_Code](/code/ensemble_parameter_estimation)
+[Fast_Code](code/ensemble_parameter_estimation)
 
 ### Publications
 Author-accepted manuscripts of the papers that present the model's background, theory, formulation, algorithms, case studies as well as a sensitivity analysis of the physical parameters in the model. 
