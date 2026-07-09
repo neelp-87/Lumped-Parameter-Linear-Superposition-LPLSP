@@ -43,7 +43,7 @@ where $T^{s} _i(t_s)$ is the simulated temperature of the body $i$ and $t_s$ is 
 ```math
     E_i = P_{i} R _{ij},
 ```
-where, $P_{i}$ is the applied power at body $i$ and $R _{ij}$ the thermal resistance between the location $x_i$ (where the temperature $T^{s}_i$ is measured) and the location $x_{P_{T}/C_{T}}$. The term $\theta_i$ represents the time constant which characterizes the rate of change of temperature. In systems with two bodies where each body may act as the source, sink or both, the deviation terms must consider the effects of each source on the other. Thus, the principle of superposition is applied and the deviation terms are expressed as,
+where, $P\_{i}$ is the applied power at body $i$ and $R\_{ij}$ the thermal resistance between the location $x\_i$ (where the temperature $T^{s}\_i$ is measured) and the location $x\_{P\_{T}/C\_{T}}$. The term $\theta\_i$ represents the time constant which characterizes the rate of change of temperature. In systems with two bodies where each body may act as the source, sink or both, the deviation terms must consider the effects of each source on the other. Thus, the principle of superposition is applied and the deviation terms are expressed as,
 ```math
     \begin{aligned}
         T^{D} _{1}(t) = (P_{1} R_{11} + P_{2} R_{12}) [1-e^{-\theta_1 t}], \\
@@ -73,7 +73,7 @@ with $P_{T,j}=P_{1,j}+P_{2,j}$. This expression applies to any generalized syste
     T^{D} _{2}(t) = \sum_j ^{n_T} [(P_{1,j} R_{21} + P_{2,j} R_{22}) \\ - (P_{1,j-1} R_{21} + P_{2,j-1} R_{22})] \\ (1-e^{-\theta_2 (t-t^{0} _{j-1})}),
 \end{split}
 ```
-where, $j$ is the index of number of changes in the input power, $n_T$ is total number of changes (transients) in the input, and $t^{0} _{j}$ is the time instant at which the change in input powers occurs. The initial values are, $P_{1,0}=P_{2,0}=0, t^{0} _{0}=0$.
+where, $j$ is the index of number of changes in the input power, $n_T$ is total number of changes (transients) in the input, and $t^{0}\_{j}$ is the time instant at which the change in input powers occurs. The initial values are, $P\_{1,0}=0$, $P\_{2,0}=0$, $t^{0}\_{0}=0$.
 
 ## Model for multiple bodies with mixed conduction and convection
 For convection heat transfer, the problem inherently has two mediums: the solid and the surrounding fluid. The governing equation must be modified to include the effects of flow velocity through continuity, Navier Stokes and energy equations, and the boundary condition must include convection boundary. For non-zero flow velocity, the temperature exhibits an exponential transient response, reaching a steady state more rapidly compared to purely conductive cases. This behavior is analogous to an association curve. The temperature evolution of the solid body in a fluid can be expressed as,
