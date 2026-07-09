@@ -92,6 +92,6 @@ Alternatively expressed, a linear relationship is observed between the parameter
 ```
 where, $j$ is the index of number of changes in the input power, $n_T$ is total number of changes (transients) in the input, and $t^{0} _{j}$ is the time instant at which the change in input powers occurs.
 
-
+# References
 [^IEEE]: N. Padmanabhan, "A Transient Thermal Model for Power Electronics Systems," SoutheastCon 2024, Atlanta, GA, USA, 2024, pp. 1294-1299, doi: 10.1109/SoutheastCon52093.2024.10500091.
 [^SAE1]: Padmanabhan, N., "A Scalable Approach for Transient Thermal Modeling of Automotive Power Electronics," SAE Technical Paper Series, January 1, 2025, https://doi.org/10.4271/2025-01-5073.
