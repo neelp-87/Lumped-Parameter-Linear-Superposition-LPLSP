@@ -51,7 +51,7 @@ LPLSP model parameters estimated using a short single transient simulation data,
 ## Publications
 Author-accepted manuscripts of the papers that present the model's background, theory, formulation, algorithms, case studies as well as a sensitivity analysis of the physical parameters in the model. 
 
-**Location:** publications/papers_and_preprints
+[Manuscripts](/publications/papers_and_preprints)
 
 ## References
 If you use this repository in academic research, please cite the following publications:
