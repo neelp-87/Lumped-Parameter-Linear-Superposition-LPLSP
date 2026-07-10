@@ -1,8 +1,7 @@
-# Lumped Parameter Linear Superposition (LPLSP) based reduced order model (ROM)
-An implementation of Lumped Parameter Linear Superposition (LPLSP) methods for transient thermal system modeling.
+# Lumped Parameter Linear Superposition (LPLSP)
 
 ## Overview
-LPLSP is a reduced-order modeling technique that combines lumped parameter thermal modeling with linear superposition. It maps heat generation within an electronic system to temperature response at arbitrary monitor locations.
+Documentation and open-source codes for implementation of Lumped Parameter Linear Superposition (LPLSP) model to create reduced order models of transient thermal systems. LPLSP is a reduced-order modeling technique that combines lumped parameter thermal modeling with linear superposition. It maps heat generation within an thermal system to temperature response at arbitrary monitor locations.
 
 The method is intended for systems with:
 
@@ -13,7 +12,12 @@ The method is intended for systems with:
 
 The resulting model can rapidly predict temperature response while preserving the dominant thermal dynamics of the original system.
 
-## Applicable Physics
+## Documentation
+
+- [Theory](theory.md)
+- [Algorithm](algorithm.md)
+
+## Model summary
 The thermal system is represented using lumped thermal parameters:
 
 - Thermal Resistance $(R)$
@@ -32,37 +36,21 @@ T_i(t)=T_0+
 \right)
 $$
 
+## Codes
+### Sequential Parameter Estimation and Modeling
+Traditional LPLSP implementation requiring sequential excitation of individual heat sources.\
+[LPLSP_Base_Code](/code/sequential_parameter_estimation)
 
-## Repository Contents
-### Theory
-Background, formulation and development of the model.
+### Ensemble Parameter Estimation and Modeling
+LPLSP model parameters estimated using a short single transient simulation data, reducing the overall computation time for ROM development and temperature estimation using ROM.\
+[Ensemble_Parameter_Estimation_Code](/code/ensemble_parameter_estimation)
 
-[Theory](docs/theory.md)
-
-### Algorithm
-Algorithm of the model. This includes 1. Algorithm for sequential parameter estimation, 2. Algorithm for ensemble parameter estimation (single shot estimation) from transient data.
-
-[Algorithm](docs/algorithm.md)
-
-### Codes
-#### Sequential Parameter Estimation and Modeling
-Traditional LPLSP implementation requiring sequential excitation of individual heat sources.
-
-[Base_Code](code/sequential_parameter_estimation)
-
-
-#### Ensemble Parameter Estimation and Modeling
-LPLSP model parameters estimated using a short single transient simulation data, reducing the overall computation time for ROM development and temperature estimation using ROM.
-
-[Fast_Code](code/ensemble_parameter_estimation)
-
-### Publications
-Author-accepted manuscripts of the papers that present the model's background, theory, formulation, algorithms, case studies as well as a sensitivity analysis of the physical parameters in the model. 
-
-**Location:** publications/papers_and_preprints
+## Publications
+Author-accepted manuscripts of the papers that present the model's background, theory, formulation, algorithms, case studies as well as a sensitivity analysis of the physical parameters in the model. \
+[Manuscripts](/publications/papers_and_preprints)
 
 ## References
-If you use this repository in academic research, please cite the following publications:
+If you use this repository in academic research, please cite the following publications:\
 ### [1] Background Methodology
 N. Padmanabhan, "A Transient Thermal Model for Power Electronics Systems," SoutheastCon 2024, Atlanta, GA, USA, 2024, pp. 1294-1299, doi: 10.1109/SoutheastCon52093.2024.10500091.
 
