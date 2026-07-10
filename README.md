@@ -32,6 +32,10 @@ T_i(t)=T_0+
 \right)
 $$
 
+### Workflow
+<p align="center">
+<img src="/workflow.png" width="400">
+</p>
 
 ## Repository Contents
 ### Theory
