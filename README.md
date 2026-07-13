@@ -58,7 +58,7 @@ Traditional LPLSP implementation requiring sequential excitation of individual h
 #### Ensemble Parameter Estimation and Modeling
 LPLSP model parameters estimated using a short single transient simulation data, reducing the overall computation time for ROM development and temperature estimation using ROM.
 
-[Fast_Python_Code](code/ensemble_parameter_estimation/Python)
+[Fast_Python_Code](code/ensemble_parameter_estimation/Python) \
 [Fast_Matlab_Code](code/ensemble_parameter_estimation/Matlab)
 
 ### Publications
