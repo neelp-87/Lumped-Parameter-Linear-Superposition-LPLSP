@@ -52,13 +52,14 @@ Algorithm of the model. This includes 1. Algorithm for sequential parameter esti
 #### Sequential Parameter Estimation and Modeling
 Traditional LPLSP implementation requiring sequential excitation of individual heat sources.
 
-[Base_Code](code/sequential_parameter_estimation)
+[Base_Code](code/sequential_parameter_estimation/Matlab)
 
 
 #### Ensemble Parameter Estimation and Modeling
 LPLSP model parameters estimated using a short single transient simulation data, reducing the overall computation time for ROM development and temperature estimation using ROM.
 
-[Fast_Code](code/ensemble_parameter_estimation)
+[Fast_Python_Code](code/ensemble_parameter_estimation/Python)
+[Fast_Matlab_Code](code/ensemble_parameter_estimation/Matlab)
 
 ### Publications
 Author-accepted manuscripts of the papers that present the model's background, theory, formulation, algorithms, case studies as well as a sensitivity analysis of the physical parameters in the model. 
