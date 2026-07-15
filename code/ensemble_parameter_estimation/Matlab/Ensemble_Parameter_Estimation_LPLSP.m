@@ -44,15 +44,13 @@
 %
 % -------------------------------------------------------------------------
 
-%% STAGE 1 - PARAMETER ESTIMATION
-
 clear;
 clc;
 
-%% MAIN TRAINING SCRIPT FOR PARAMETER ESTIMATION
+%% STAGE 1 - PARAMETER ESTIMATION - MAIN TRAINING SCRIPT 
 
 % 1. Load training data
-% 2. Build power and temperature arrays
+% 2. Build input (power) and output (temperature) arrays
 % 3. Define optimization settings
 % 4. Estimate R and K matrices
 % 5. Save identified parameters
@@ -86,7 +84,7 @@ T0 = 20.0;
 
 % r = 1  very compact model
 % r = 2  moderate complexity
-% r = 3  accurate
+% r = 3  high accuracy
 
 r = 3;
 
@@ -104,7 +102,7 @@ fprintf('Rank %d model - %d parameters\n',r,n_params);
 % Lower bounds = 0
 % Upper bounds = inf
 %
-% Ensures all estimates remain positive.
+% Ensures all estimates remain positive. This is physically consistent.
 
 theta0 = 0.1*ones(n_params,1);
 
@@ -117,45 +115,24 @@ fprintf('\nStart Optimization (Rank-Reduced Estimation)\n')
 
 tic
 
-objFun = @(theta) residuals_rank( ...
-    theta,...
-    t,...
-    P,...
-    T_meas,...
-    T0,...
-    n_temps,...
-    n_inputs,...
-    r);
+objFun = @(theta) residuals_rank(theta,t,P,T_meas,T0,n_temps,n_inputs,r);
 
-options = optimoptions('lsqnonlin',...
-    'Algorithm','trust-region-reflective',...
-    'Display','iter',...
-    'MaxFunctionEvaluations',30000,...
-    'MaxIterations',1000,...
-    'StepTolerance',1e-8,...
-    'FunctionTolerance',1e-8);
+options = optimoptions('lsqnonlin','Algorithm','trust-region-reflective',...
+    'Display','iter','MaxFunctionEvaluations',30000,'MaxIterations',1000,...
+    'StepTolerance',1e-8,'FunctionTolerance',1e-8);
 
 % options = optimoptions('lsqnonlin',...
 %     'Algorithm','trust-region-reflective',...
 %     'UseParallel',true,...
 %     'Display','iter');
 
-theta_opt = lsqnonlin( ...
-    objFun,...
-    theta0,...
-    lb,...
-    ub,...
-    options);
+theta_opt = lsqnonlin(objFun,theta0,lb,ub,options);
 
 fprintf('\nOptimization complete in %.2f s\n',toc);
 
 %% EXTRACT FINAL MATRICES
 
-[R_est,K_est] = unpack_rank_factors( ...
-    theta_opt,...
-    n_temps,...
-    n_inputs,...
-    r);
+[R_est,K_est] = unpack_rank_factors(theta_opt,n_temps,n_inputs,r);
 
 disp('R_est:')
 disp(R_est)
@@ -182,173 +159,9 @@ for i = 1:n_temps
     end
 end
 
-df_out = table(rows,values,...
-    'VariableNames',{'Parameter','Value'});
+df_out = table(rows,values,'VariableNames',{'Parameter','Value'});
 
 writetable(df_out,'parameters_rank_reduced.xlsx');
 
 fprintf('\nSaved parameters_rank_reduced.xlsx\n');
-
-%% ========================================================================
-% LOCAL FUNCTIONS
-% ========================================================================
-
-function T_pred = temperature_model(P,t,R_row,K_row,T0)
-
-    % Parameters:
-    %
-    % P      : Input power dissipation (W)
-    % t      : Time vector (s)
-    % R_row  : Thermal resistance coupling coefficients
-    % K_row  : Time constant coupling coefficients
-    % T0     : Ambient temperature
-    %
-    % Output:
-    % Predicted temperature profile
-
-    
-    t = t(:)';      % force row vector
-    
-    [n_inputs,t_len] = size(P);
-    
-    T_out = zeros(1,t_len);
-
-
-    % Process contribution from each power source
-
-    for j = 1:n_inputs
-
-        Rj = R_row(j);
-        Kj = K_row(j);
-
-        % Create local copy because first sample
-        % is not treated as a step.
-
-        Pj = P(j,:);
-        Pj(1) = 0;
-
-        % Detect indices where input changes
-
-        idx_list = find(diff(Pj) ~= 0) + 1;
-
-        if isempty(idx_list)
-            continue;
-        end
-
-        % Convert power to temperature response
-
-        TC = Pj .* Rj;
-
-        % Add temperature response
-        % from every detected index change
-
-        for idx = idx_list
-
-            delta = TC(idx) - TC(idx-1);
-
-            t_step = t(idx-1);
-
-            dt = t(idx:end) - t_step;
-
-            % First-order response - LPLSP
-
-            T_out(idx:end) = T_out(idx:end) + ...
-                delta .* ...
-                (1 - exp(-Kj .* dt));
-
-        end
-
-    end
-
-    T_pred = T0 + T_out;
-
-end
-
 % -------------------------------------------------------------------------
-
-function [R,K] = unpack_rank_factors( ...
-    theta,...
-    n_temps,...
-    n_inputs,...
-    r)
-
-    idx = 1;
-
-    % Extract A
-
-    A = reshape( ...
-        theta(idx:idx+n_temps*r-1),...
-        n_temps,r);
-
-    idx = idx + n_temps*r;
-
-    % Extract B
-
-    B = reshape( ...
-        theta(idx:idx+n_inputs*r-1),...
-        n_inputs,r);
-
-    idx = idx + n_inputs*r;
-
-    % Extract C
-
-    C = reshape( ...
-        theta(idx:idx+n_temps*r-1),...
-        n_temps,r);
-
-    idx = idx + n_temps*r;
-
-    % Extract D
-
-    D = reshape( ...
-        theta(idx:idx+n_inputs*r-1),...
-        n_inputs,r);
-
-    % Reconstruct R,K
-
-    R = A * B';
-    K = C * D';
-
-end
-
-% -------------------------------------------------------------------------
-
-function err = residuals_rank( ...
-    theta,...
-    t,...
-    P,...
-    T_meas,...
-    T0,...
-    n_temps,...
-    n_inputs,...
-    r)
-
-    % Build / reconstruct R,K matrices
-
-    [R,K] = unpack_rank_factors( ...
-        theta,...
-        n_temps,...
-        n_inputs,...
-        r);
-
-    T_pred = zeros(size(T_meas));
-
-    % Compute temperature
-    % for all monitor nodes
-
-    for i = 1:n_temps
-
-        T_pred(i,:) = temperature_model( ...
-            P,...
-            t,...
-            R(i,:),...
-            K(i,:),...
-            T0);
-
-    end
-
-    % Residual vector
-
-    err = T_pred(:) - T_meas(:);
-
-end
