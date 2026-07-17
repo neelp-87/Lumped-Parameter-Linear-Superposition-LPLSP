@@ -32,6 +32,26 @@ T_i(t)=T_0+
 \right)
 $$
 
+In some scenarios, an external heat source that is spatially at a different location, may affect the temperature of the thermal system. In this case, the effect of the external heat source may show up as a temperature rise at specific monitor points in the system. To include the effects of these external heat source as a temperature boundary condition, the formulation above is slightly modified. To keep the physical interpretation of thermal resistance and time constant due to sources that dissipate power in Watts and to separate it from sources that show up as temperature rise in degree Celsius, we extend this formulation as follows: 
+
+$$
+T_i(t)=T_0+
+\sum_{j=1}^{N_P}
+\sum_{m}
+\Delta\left(P_j(t)R_{ij}\right)_m
+\left(
+1-e^{-K_{ij}(t-t_m)}
+\right) +
+\sum_{k=1}^{N_S}
+\sum_{m}
+\Delta\left(T_{S_k}(t)G_{ik}\right)_m
+\left(
+1-e^{-L_{ik}(t-t_m)}
+\right)
+$$
+
+where, $N_P$ represents the number of sources that dissipate heat in units of $W$, $N_S$ represents the number of sources that act as temperature boundary conditions in units of $^{\circ} C$, and $G, L$ represent the gain and time constant matrix similar to $R, K$ matrices. 
+
 ### Workflow
 <p align="center">
 <img src="/workflow.png" width="400">
@@ -58,8 +78,13 @@ Traditional LPLSP implementation requiring sequential excitation of individual h
 #### Ensemble Parameter Estimation and Modeling
 LPLSP model parameters estimated using a short single transient simulation data, reducing the overall computation time for ROM development and temperature estimation using ROM.
 
-[Fast_Python_Code](code/ensemble_parameter_estimation/Python) \
+[Fast_Python_Code](code/ensemble_parameter_estimation/Python) 
+
+* [Power_Dissipation_Only](code/ensemble_parameter_estimation/Python/Source_PowerDissipation_Only) 
+* [Power_Dissipation_and_TemperatureSources](code/ensemble_parameter_estimation/Python/Source_PowerDissipation_Temperature) 
+
 [Fast_Matlab_Code](code/ensemble_parameter_estimation/Matlab)
+
 
 ### Publications
 Author-accepted manuscripts of the papers that present the model's background, theory, formulation, algorithms, case studies as well as a sensitivity analysis of the physical parameters in the model. 
