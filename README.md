@@ -57,6 +57,10 @@ where, $N_P$ represents the number of sources that dissipate heat in units of $W
 <img src="/workflow.png" width="400">
 </p>
 
+<p align="center">
+<img src="/ROMDev_Overview.png" width="600">
+</p>
+
 ## Repository Contents
 ### Theory
 Background, formulation and development of the model.
