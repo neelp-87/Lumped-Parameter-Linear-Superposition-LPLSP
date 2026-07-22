@@ -8,3 +8,9 @@
 5. load_RK_param_rank_reduced.m - Read parameter names: R11, R21, ..., K11, K12 ...
 6. load_validation_power.m - Imports new input power dissipation for prediction
 ## Prediction Script for new inputs - Temperature_Prediction_LPLSP.m
+
+## Data files
+### Training Data - Training.xlsx
+### Test Data - Test.xlsx
+### R,K parameters - parameters_rank_reduced.xlsx
+### Temperature predictions for Test Data - output_rank_reduced.xlsx
