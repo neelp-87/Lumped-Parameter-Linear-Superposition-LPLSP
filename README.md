@@ -22,7 +22,7 @@ The thermal system is represented using lumped thermal parameters:
 
 The temperature response is modeled through linear superposition of source contributions and expressed in a compact form as,
 
-$$
+```math
 T_i(t)=T_0+
 \sum_{j=1}^{N}
 \sum_{m}
@@ -30,11 +30,11 @@ T_i(t)=T_0+
 \left(
 1-e^{-K_{ij}(t-t_m)}
 \right)
-$$
+```
 
 In some scenarios, an external heat source that is spatially at a different location, may affect the temperature of the thermal system. In this case, the effect of the external heat source may show up as a temperature rise at specific monitor points in the system. To include the effects of these external heat source as a temperature boundary condition, the formulation above is slightly modified. To keep the physical interpretation of thermal resistance and time constant due to sources that dissipate power in Watts and to separate it from sources that show up as temperature rise in degree Celsius, we extend this formulation as follows: 
 
-$$
+```math
 T_i(t)=T_0+
 \sum_{j=1}^{N_P}
 \sum_{m}
@@ -48,7 +48,7 @@ T_i(t)=T_0+
 \left(
 1-e^{-L_{ik}(t-t_m)}
 \right)
-$$
+```
 
 where, $N_P$ represents the number of sources that dissipate heat in units of $W$, $N_S$ represents the number of sources that act as temperature boundary conditions in units of $^{\circ} C$, and $G, L$ represent the gain and time constant matrix similar to $R, K$ matrices. 
 
