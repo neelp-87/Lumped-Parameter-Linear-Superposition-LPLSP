@@ -27,9 +27,11 @@ Extending from a single insulated body to two cuboidal bodies insulated from the
     T _{2} (t)=T^0+T^L(t)+T^{D} _{2}(t).
 \end{aligned}
 ```
+
 <p align="center">
-<img src="/2Body.png" width="400">
+<img src="/docs/2Body.png" width="600">
 </p>
+
 The linear temperature term is defined as $T^L(t)=(P_T / C_T) t$, where the ratio $P_T/C_T = \sum_{i=1} ^2 P_i / \sum_{i=1} ^2 C_i$ represents the total power input applied to both bodies divided by their combined thermal capacitance. The linear temperature curve $T^L(t)$ lies between temperatures $T_1(t)$ and $T_2(t)$, and can be computed a priori using the material properties, geometrical details of the bodies and input power dissipation. The spatial location (plane in this case) denoted by $x_{P_{T}/C_{T}}$ where $T^L(t)$ is observed, depends on the applied power dissipation, and thermal capacitance of each body. For bodies with similar thermal capacitances and power dissipation, this location typically lies near the midpoint between the two bodies. However, for bodies with differing capacitances, the linear temperature plane shifts closer to the body with the larger thermal capacitance. The term $T^{D}_i (t)$, models the deviation in temperature between the body $T^{s}_i(t)$, measured from the simulation and $T^L(t)$. This can be expressed as,
 ```math
 	T^{D}_i (t)= T^{s}_i (t) - T^L(t). 
