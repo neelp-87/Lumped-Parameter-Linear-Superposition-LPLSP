@@ -11,7 +11,7 @@ Located in:\
 [ECU Simulation (Multibody mixed mode heat transfer)](/code/sequential_parameter_estimation/Matlab/Multibody) 
 
 ### Model and Code
-Within each folder, there is a packed Ansys Icepak (thermal simulation - CFD) project (.tzr). The attached excel sheet contains the inputs for the simulation as well as the temperature measured from the simulation for the input. The MATLAB code then imports the temperatures from the Excel sheet, performs optimization and estimates the model parameters. The MATLAB function within each folder then calculates the temperature response for new input power dissipation via LPLSP. 
+Within each folder, there are excel sheets containing the inputs for the simulation as well as the temperature measured from the simulation for the input. The corresponding Ansys Icepak simulation files (compressed .tzr projects are available in [Icepak Simulation Files](/data/simulations). The MATLAB code then imports the temperatures from the Excel sheet, performs optimization and estimates the model parameters. The MATLAB function within each folder then calculates the temperature response for new input power dissipation via LPLSP. 
 
 
 
