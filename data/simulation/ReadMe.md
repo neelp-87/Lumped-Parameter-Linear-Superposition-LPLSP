@@ -1,9 +1,9 @@
 # CFD Thermal Simulation
 The simulation setup described here is used to generate the full CFD data, training data for model development, and to calculate computational times. The case studies considered in this work include 
-(1) [one body isolated system](/code/sequential_parameter_estimation/Matlab/1-Body), 
-(2) [two-body conduction system](/code/sequential_parameter_estimation/Matlab/2-Body), 
-(3) [three-body natural convection system](/code/sequential_parameter_estimation/Matlab/Convection), and 
-(4) [an inverter module](/code/ensemble_parameter_estimation/Python/Source_PowerDissipation_Only/) comprising six MOSFETs mounted on a printed circuit board assembly (PCBA) attached to a finned heatsink under natural convection and forced convection environment at constant flow velocity.\
+(1) [one body isolated system](/code/sequential_parameter_estimation/Matlab/1-Body), \
+(2) [two-body conduction system](/code/sequential_parameter_estimation/Matlab/2-Body), \ 
+(3) [three-body natural convection system](/code/sequential_parameter_estimation/Matlab/Convection), and \
+(4) [an inverter module](/code/ensemble_parameter_estimation/Python/Source_PowerDissipation_Only/) comprising six MOSFETs mounted on a printed circuit board assembly (PCBA) attached to a finned heatsink under natural convection and forced convection environment at constant flow velocity.
 <p align="center">
 <img src="/data/simulation/T_component.png" width="600">
 </p>
