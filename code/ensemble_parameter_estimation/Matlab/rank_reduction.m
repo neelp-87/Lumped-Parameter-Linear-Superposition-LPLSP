@@ -1,4 +1,4 @@
-function [R,K] = unpack_rank_factors(theta,n_temps,n_inputs,r)
+function [R,K] = rank_reduction(theta,n_temps,n_inputs,r)
 
     idx = 1;
 

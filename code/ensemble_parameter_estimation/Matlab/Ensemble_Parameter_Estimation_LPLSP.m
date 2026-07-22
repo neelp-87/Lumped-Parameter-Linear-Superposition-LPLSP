@@ -132,7 +132,7 @@ fprintf('\nOptimization complete in %.2f s\n',toc);
 
 %% EXTRACT FINAL MATRICES
 
-[R_est,K_est] = unpack_rank_factors(theta_opt,n_temps,n_inputs,r);
+[R_est,K_est] = rank_reduction(theta_opt,n_temps,n_inputs,r);
 
 disp('R_est:')
 disp(R_est)

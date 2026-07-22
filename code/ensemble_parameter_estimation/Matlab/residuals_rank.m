@@ -2,7 +2,7 @@ function err = residuals_rank(theta,t,P,T_meas,T0,n_temps,n_inputs,r)
 
     % Build / reconstruct R,K matrices
 
-    [R,K] = unpack_rank_factors(theta,n_temps,n_inputs,r);
+    [R,K] = rank_reduction(theta,n_temps,n_inputs,r);
 
     T_pred = zeros(size(T_meas));
 
